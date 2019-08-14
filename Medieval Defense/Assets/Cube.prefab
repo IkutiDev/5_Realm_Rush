@@ -58,7 +58,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7d77d7457c727504487baedbba40fab6, type: 2}
+  - {fileID: 2100000, guid: d3ef2918ceaf2964895d5592c3a23754, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -151,7 +151,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ade7727b8c96d764f971e1da33288fd2, type: 2}
+  - {fileID: 2100000, guid: d3ef2918ceaf2964895d5592c3a23754, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -244,7 +244,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7d77d7457c727504487baedbba40fab6, type: 2}
+  - {fileID: 2100000, guid: a854d8797268d1e49b095def77b4a0c9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -337,7 +337,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e877b3ef9fd30a54282368442198d585, type: 2}
+  - {fileID: 2100000, guid: a854d8797268d1e49b095def77b4a0c9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -431,7 +431,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ade7727b8c96d764f971e1da33288fd2, type: 2}
+  - {fileID: 2100000, guid: a854d8797268d1e49b095def77b4a0c9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -524,7 +524,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e877b3ef9fd30a54282368442198d585, type: 2}
+  - {fileID: 2100000, guid: d3ef2918ceaf2964895d5592c3a23754, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -637,7 +637,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8323731301049128444}
-  m_Text: XX,XX
+  m_Text: 0,0
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -701,7 +701,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86ddfd472474b8a449653f82aa0292e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gridSize: 10
 --- !u!114 &7404959612264971395
 MonoBehaviour:
   m_ObjectHideFlags: 0
