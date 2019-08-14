@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PathFinder : MonoBehaviour
 {
+    [SerializeField] private TextMeshProUGUI guessText;
     [SerializeField] private Waypoint startWaypoint, endWaypoint;
 
     private Dictionary<Vector2Int, Waypoint> grid = new Dictionary<Vector2Int, Waypoint>();
