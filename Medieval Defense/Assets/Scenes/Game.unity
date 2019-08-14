@@ -1025,6 +1025,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 577572742}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &577572744 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7404959612264971395, guid: 5014403014760794684efdff2a1db9df,
+    type: 3}
+  m_PrefabInstance: {fileID: 577572742}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bb5820cec76085428c684a99baedc9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &579711704
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1564,8 +1576,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20fefe2e16feb12428f0143c236edb22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startWaypoint: {fileID: 1583663991}
-  endWaypoint: {fileID: 1735227757}
+  startWaypoint: {fileID: 577572744}
+  endWaypoint: {fileID: 577572744}
+  isRunning: 1
 --- !u!1001 &1080426043
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1966,18 +1979,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1569922993}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1583663991 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7404959612264971395, guid: 5014403014760794684efdff2a1db9df,
-    type: 3}
-  m_PrefabInstance: {fileID: 302898879}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bb5820cec76085428c684a99baedc9d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1604096264
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2378,18 +2379,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1735227755}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1735227757 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7404959612264971395, guid: 5014403014760794684efdff2a1db9df,
-    type: 3}
-  m_PrefabInstance: {fileID: 1735227755}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bb5820cec76085428c684a99baedc9d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &2020687866
 PrefabInstance:
   m_ObjectHideFlags: 0
