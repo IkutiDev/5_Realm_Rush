@@ -1,16 +1,24 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Waypoint : MonoBehaviour
 {
+    [SerializeField] private Color exploredColor;
+    // public ok here as is a data class
+    public bool isExplored = false;
+    public Waypoint exploredFrom;
+
     private Vector2Int gridPosition;
     private const int gridSize = 10;
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        if (isExplored)
+        {
+            SetTopColor(exploredColor);
+        }
     }
 
     public int GetGridSize()
