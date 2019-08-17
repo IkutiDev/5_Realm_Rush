@@ -5,19 +5,22 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private int hits=2;
+    [SerializeField] private int hitPoints=2;
 
 
     private void OnParticleCollision(GameObject other)
     {
-        Debug.Log("Hit");
-        hits--;
-        if (hits <= 0)
+        ProcessHit();
+        if (hitPoints <= 0)
         {
             KillEnemy();
         }
     }
 
+    void ProcessHit()
+    {
+        hitPoints -= 1;
+    }
     private void KillEnemy()
     {
         Destroy(gameObject);
