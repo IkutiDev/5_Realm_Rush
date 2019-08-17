@@ -7,22 +7,45 @@ public class Tower : MonoBehaviour
 {
     [SerializeField] private Transform objectToPan;
 
-    [SerializeField] private Transform targetEnemy;
-
     [SerializeField] private float attackRange=30f;
-
-    private void Start()
-    {
-        targetEnemy = FindObjectOfType<EnemyMovement>().transform;
-        
-    }
+    //State
+    private Transform targetEnemy;
     // Update is called once per frame
     void Update()
     {
+        SetTargetEnemy();
         objectToPan.LookAt(targetEnemy);
         ShootEnemy(CanShootEnemy());
     }
 
+    private void SetTargetEnemy()
+    {
+        var sceneEnemies = FindObjectsOfType<Enemy>();
+        if (sceneEnemies.Length == 0) { return; }
+
+        Transform closestEnemy = sceneEnemies[0].transform;
+        foreach (Enemy testEnemy in sceneEnemies)
+        {
+            closestEnemy = GetClosest(closestEnemy,testEnemy.transform);
+        }
+
+        targetEnemy = closestEnemy;
+    }
+
+    private Transform GetClosest(Transform closestEnemy, Transform testEnemyTransform)
+    {
+        if (CalculateDistanceFromTower(closestEnemy) > CalculateDistanceFromTower(testEnemyTransform))
+        {
+            return testEnemyTransform;
+        }
+
+        return closestEnemy;
+    }
+
+    private float CalculateDistanceFromTower(Transform enemyTransform)
+    {
+        return Vector3.Distance(transform.position, enemyTransform.position);
+    }
     private void ShootEnemy(bool canShoot)
     {
         ParticleSystem.EmissionModule towerEmissionModule =
@@ -34,7 +57,7 @@ public class Tower : MonoBehaviour
     {
         if (targetEnemy != null)
         {
-            float distanceToEnemy = Vector3.Distance(objectToPan.position, targetEnemy.position);
+            float distanceToEnemy = CalculateDistanceFromTower(targetEnemy);
             if (distanceToEnemy<=attackRange)
             {
                 return true;
