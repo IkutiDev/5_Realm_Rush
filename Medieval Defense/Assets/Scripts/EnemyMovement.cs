@@ -19,7 +19,7 @@ public class EnemyMovement : MonoBehaviour
         foreach (var node in path)
         {
             transform.position = node.transform.position;
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(2f);
         }
     }
 }
