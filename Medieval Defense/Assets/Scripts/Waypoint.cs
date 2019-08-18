@@ -8,25 +8,29 @@ public class Waypoint : MonoBehaviour
     // public ok here as is a data class
     public bool isExplored = false;
     public Waypoint exploredFrom;
+    public bool isPlaceable  = true;
 
     private Vector2Int gridPosition;
-    private const int gridSize = 10;
+    private const int GridSize = 10;
 
 
     public int GetGridSize()
     {
-        return gridSize;
+        return GridSize;
     }
 
     public Vector2Int GetGridPosition()
     {
-        return new Vector2Int(Mathf.RoundToInt(transform.position.x / gridSize),
-        Mathf.RoundToInt(transform.position.z / gridSize)
+        return new Vector2Int(Mathf.RoundToInt(transform.position.x / GridSize),
+        Mathf.RoundToInt(transform.position.z / GridSize)
         );
     }
 
     void OnMouseOver()
     {
-        Debug.Log(gameObject.name);
+        if (Input.GetMouseButtonDown(0) && isPlaceable)
+        {
+            Debug.Log(gameObject.name);
+        }
     }
 }
