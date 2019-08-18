@@ -6,6 +6,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private int hitPoints=2;
+    
 
 
     private void OnParticleCollision(GameObject other)
