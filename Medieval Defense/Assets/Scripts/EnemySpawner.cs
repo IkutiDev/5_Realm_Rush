@@ -7,8 +7,8 @@ public class EnemySpawner : MonoBehaviour
 {
     [Range(0.1f,120f)]
     [SerializeField] private float secondBetweenSpawns=5f;
-    [SerializeField] private Enemy ork;
-    [SerializeField] private Enemy goblin;
+    [SerializeField] private EnemyDamage ork;
+    [SerializeField] private EnemyDamage goblin;
     private bool spawnEnemies = true;
     private int orkSpawnCounter;
 

@@ -20,11 +20,11 @@ public class Tower : MonoBehaviour
 
     private void SetTargetEnemy()
     {
-        var sceneEnemies = FindObjectsOfType<Enemy>();
+        var sceneEnemies = FindObjectsOfType<EnemyDamage>();
         if (sceneEnemies.Length == 0) { return; }
 
         Transform closestEnemy = sceneEnemies[0].transform;
-        foreach (Enemy testEnemy in sceneEnemies)
+        foreach (EnemyDamage testEnemy in sceneEnemies)
         {
             closestEnemy = GetClosest(closestEnemy,testEnemy.transform);
         }

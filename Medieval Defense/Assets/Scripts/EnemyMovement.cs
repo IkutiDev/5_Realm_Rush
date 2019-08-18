@@ -6,11 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class EnemyMovement : MonoBehaviour
 {
-    [SerializeField] private List<Waypoint> path;//todo remove
     private void Start()
     {
         PathFinder pathFinder = FindObjectOfType<PathFinder>();
-        path = pathFinder.GetPath();
+        var path = pathFinder.GetPath();
         StartCoroutine(FollowPath(path));
     }
 
