@@ -32,8 +32,7 @@ public class Waypoint : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && isPlaceable)
         {
-            var towerPosition = new Vector3(gameObject.transform.position.x - 4f, 4.5f, gameObject.transform.position.z - 4f);
-            FindObjectOfType<TowerFactory>().AddTower(this, towerPosition);
+            FindObjectOfType<TowerFactory>().AddTower(this);
         }
     }
 }
