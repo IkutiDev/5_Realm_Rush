@@ -6,7 +6,9 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     [Range(0.1f,120f)]
-    [SerializeField] private float secondBetweenSpawns=5f;
+    [SerializeField] private float secondBetweenSpawnsOrk=5f;
+
+    [SerializeField] private float secondBetweenSpawnsGoblin = 0.5f;
     [SerializeField] private EnemyDamage ork;
     [SerializeField] private EnemyDamage goblin;
     private bool spawnEnemies = true;
@@ -25,13 +27,13 @@ public class EnemySpawner : MonoBehaviour
             {
                 orkSpawnCounter = 0;
                 Instantiate(ork, ork.transform.position, ork.transform.rotation);
-                yield return new WaitForSeconds(secondBetweenSpawns);
+                yield return new WaitForSeconds(secondBetweenSpawnsOrk);
             }
             else
             {
                 orkSpawnCounter++;
                 Instantiate(goblin, goblin.transform.position, goblin.transform.rotation);
-                yield return new WaitForSeconds(secondBetweenSpawns/2);
+                yield return new WaitForSeconds(secondBetweenSpawnsGoblin);
             }
 
         }
