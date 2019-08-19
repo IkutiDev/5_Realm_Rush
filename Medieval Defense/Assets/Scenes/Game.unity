@@ -35459,7 +35459,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   secondBetweenSpawnsOrk: 5
-  secondBetweenSpawnsGoblin: 0.5
+  secondBetweenSpawnsGoblin: 0.75
   ork: {fileID: 9145142501411401928, guid: c7590f2ef585a654a9ac888ce8640c02, type: 3}
   goblin: {fileID: 3519800688073530543, guid: 8aea42cb15ab1764a8d878e50a4f69cf, type: 3}
 --- !u!1001 &1466984534

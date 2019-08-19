@@ -20,7 +20,7 @@ public class EnemyDamage : MonoBehaviour
         ProcessHit();
         if (hitPoints <= 0)
         {
-            KillEnemy();
+            KillEnemy(deathParticleSystem);
         }
     }
 
@@ -29,9 +29,9 @@ public class EnemyDamage : MonoBehaviour
         hitPoints -= 1;
         hitParticlePrefab.Play();
     }
-    private void KillEnemy()
+    public void KillEnemy(ParticleSystem particleSystem)
     {
-        var vfx =Instantiate(deathParticleSystem, gameObject.transform.position, Quaternion.identity,_deathParticleParent);
+        var vfx =Instantiate(particleSystem, gameObject.transform.position, Quaternion.identity,_deathParticleParent);
         float timeToDestroy = vfx.main.duration;
         Destroy(vfx.gameObject, timeToDestroy);
         Destroy(gameObject);

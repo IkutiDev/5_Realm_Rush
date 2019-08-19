@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class EnemyMovement : MonoBehaviour
 {
+    [SerializeField] private float movementPeriod=0.5f;
+    [SerializeField] private ParticleSystem reachGoalParticleSystem;
     private void Start()
     {
         PathFinder pathFinder = FindObjectOfType<PathFinder>();
@@ -18,7 +20,8 @@ public class EnemyMovement : MonoBehaviour
         foreach (var node in path)
         {
             transform.position = node.transform.position;
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(movementPeriod);
         }
+        gameObject.GetComponent<EnemyDamage>().KillEnemy(reachGoalParticleSystem);
     }
 }

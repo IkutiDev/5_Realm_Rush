@@ -7,7 +7,7 @@ public class EnemySpawner : MonoBehaviour
 {
     [Range(0.1f,120f)]
     [SerializeField] private float secondBetweenSpawnsOrk=5f;
-
+    [Range(0.1f, 120f)]
     [SerializeField] private float secondBetweenSpawnsGoblin = 0.5f;
     [SerializeField] private EnemyDamage ork;
     [SerializeField] private EnemyDamage goblin;
