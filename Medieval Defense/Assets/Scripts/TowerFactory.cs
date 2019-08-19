@@ -6,7 +6,8 @@ public class TowerFactory : MonoBehaviour
 {
     [SerializeField] private int towerLimit = 5;
     [SerializeField] private Tower towerPrefab;
-    private Queue towerQueue = new Queue();
+    [SerializeField] private Transform towersParent;
+    private Queue<Tower> towerQueue = new Queue<Tower>();
     public void AddTower(Waypoint baseWaypoint)
     {
         int currentTowerAmount = towerQueue.Count;
@@ -20,24 +21,24 @@ public class TowerFactory : MonoBehaviour
         }
     }
 
-    private void MoveExistingTower(Waypoint baseWaypoint)
+    private void MoveExistingTower(Waypoint newBaseWaypoint)
     {
-        var towerPosition = new Vector3(baseWaypoint.transform.position.x - 4f, 4.5f, baseWaypoint.transform.position.z - 4f);
+        
         var oldTower = towerQueue.Dequeue();
-        baseWaypoint.isPlaceable = false;
-        //set the placeable flag
-        //set the baseWaypoints
+        oldTower.BaseWaypoint.isPlaceable = true;
+        var towerPosition = new Vector3(newBaseWaypoint.transform.position.x - 4f, 4.5f, newBaseWaypoint.transform.position.z - 4f);
+        oldTower.transform.position = towerPosition;
+        oldTower.BaseWaypoint = newBaseWaypoint;
+        newBaseWaypoint.isPlaceable = false;
         towerQueue.Enqueue(oldTower);
-        Debug.Log("Max towers amount reached");
     }
 
     private void InstantiateNewTower(Waypoint baseWaypoint)
     {
         var towerPosition = new Vector3(baseWaypoint.transform.position.x - 4f, 4.5f, baseWaypoint.transform.position.z - 4f);
-        var newTower =Instantiate(towerPrefab, towerPosition, towerPrefab.transform.rotation);
+        var newTower =Instantiate(towerPrefab, towerPosition, towerPrefab.transform.rotation,towersParent);
         newTower.BaseWaypoint = baseWaypoint;
         baseWaypoint.isPlaceable = false;
         towerQueue.Enqueue(newTower);
-        Debug.Log(towerQueue.Count);
     }
 }

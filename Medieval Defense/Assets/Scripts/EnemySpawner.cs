@@ -26,13 +26,13 @@ public class EnemySpawner : MonoBehaviour
             if (orkSpawnCounter >= 5)
             {
                 orkSpawnCounter = 0;
-                Instantiate(ork, ork.transform.position, ork.transform.rotation);
+                Instantiate(ork, ork.transform.position, ork.transform.rotation,transform);
                 yield return new WaitForSeconds(secondBetweenSpawnsOrk);
             }
             else
             {
                 orkSpawnCounter++;
-                Instantiate(goblin, goblin.transform.position, goblin.transform.rotation);
+                Instantiate(goblin, goblin.transform.position, goblin.transform.rotation, transform);
                 yield return new WaitForSeconds(secondBetweenSpawnsGoblin);
             }
 
