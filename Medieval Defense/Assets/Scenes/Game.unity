@@ -25010,6 +25010,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1030864722}
   - component: {fileID: 1030864723}
+  - component: {fileID: 1030864724}
   m_Layer: 0
   m_Name: World
   m_TagString: Untagged
@@ -25617,6 +25618,21 @@ MonoBehaviour:
   guessText: {fileID: 0}
   startWaypoint: {fileID: 1198035678}
   endWaypoint: {fileID: 417133690}
+--- !u!114 &1030864724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030864721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0013b8328611aab43a2d6ccad30a75d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerLimit: 5
+  towerPrefab: {fileID: 7143840457240554724, guid: d5d04eb680e37ad4d9649201ef2963dc,
+    type: 3}
 --- !u!4 &1031739258 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3612399620168519470, guid: 5014403014760794684efdff2a1db9df,
@@ -35409,7 +35425,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42d36cd6f0afbe44dad2a857b2ef50c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  secondBetweenSpawns: 5
+  secondBetweenSpawnsOrk: 5
+  secondBetweenSpawnsGoblin: 0.5
   ork: {fileID: 9145142501411401928, guid: c7590f2ef585a654a9ac888ce8640c02, type: 3}
   goblin: {fileID: 3519800688073530543, guid: 8aea42cb15ab1764a8d878e50a4f69cf, type: 3}
 --- !u!1001 &1466984534
