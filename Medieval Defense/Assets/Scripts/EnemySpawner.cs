@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -11,11 +12,14 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private float secondBetweenSpawnsGoblin = 0.5f;
     [SerializeField] private EnemyDamage ork;
     [SerializeField] private EnemyDamage goblin;
+    [SerializeField] private Text scoreText;
+    private int enemyCounter;
+    private int score;
     private bool spawnEnemies = true;
-    private int orkSpawnCounter;
 
     private void Start()
     {
+        scoreText.text = enemyCounter.ToString();
         StartCoroutine(SpawnEnemies());
     }
 
@@ -23,18 +27,25 @@ public class EnemySpawner : MonoBehaviour
     {
         while (spawnEnemies)
         {
-            if (orkSpawnCounter >= 5)
+            enemyCounter++;
+             
+            if (enemyCounter%6==0)
             {
-                orkSpawnCounter = 0;
                 Instantiate(ork, ork.transform.position, ork.transform.rotation,transform);
+                score += 5;
+                scoreText.text = score.ToString();
                 yield return new WaitForSeconds(secondBetweenSpawnsOrk);
             }
             else
             {
-                orkSpawnCounter++;
                 Instantiate(goblin, goblin.transform.position, goblin.transform.rotation, transform);
+                score++;
+                scoreText.text = score.ToString();
                 yield return new WaitForSeconds(secondBetweenSpawnsGoblin);
             }
+
+            
+            
 
         }
     }
