@@ -30,12 +30,12 @@ public class EnemyDamage : MonoBehaviour
     {
         hitPoints -= 1;
         hitParticlePrefab.Play();
-        GetComponent<AudioSource>().PlayOneShot(enemyTakesDamageSFX);
+        //GetComponent<AudioSource>().PlayOneShot(enemyTakesDamageSFX);
     }
     public void KillEnemy(ParticleSystem particleSystem)
     {
         var vfx =Instantiate(particleSystem, gameObject.transform.position, Quaternion.identity,_deathParticleParent);
-        AudioSource.PlayClipAtPoint(enemyDiesSFX,gameObject.transform.position,0.1f);
+        AudioSource.PlayClipAtPoint(enemyDiesSFX,Camera.main.transform.position,0.1f);
         float timeToDestroy = vfx.main.duration;
         Destroy(vfx.gameObject, timeToDestroy);
         Destroy(gameObject);
