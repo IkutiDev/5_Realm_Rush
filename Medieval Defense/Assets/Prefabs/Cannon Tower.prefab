@@ -4986,5 +4986,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c19c059f9239994439bc3b4cd15487e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BaseWaypoint: {fileID: 0}
   objectToPan: {fileID: 1846935113571259042}
-  attackRange: 30
+  attackRange: 37
