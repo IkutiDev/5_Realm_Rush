@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class PathFinder : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI guessText;
     [SerializeField] private Waypoint startWaypoint, endWaypoint;
 
     private Dictionary<Vector2Int, Waypoint> grid = new Dictionary<Vector2Int, Waypoint>();
@@ -43,7 +42,6 @@ public class PathFinder : MonoBehaviour
     private void CreatePath()
     {
         SetAsPath(endWaypoint);
-        endWaypoint.isPlaceable = false;
         if (endWaypoint == startWaypoint)
         {
             return;
@@ -62,6 +60,7 @@ public class PathFinder : MonoBehaviour
     {
         path.Add(waypoint);
         waypoint.isPlaceable = false;
+        waypoint.ChangeBlockToPath();
     }
 
     private void BreadthFirstSearch()

@@ -9,8 +9,8 @@ public class Waypoint : MonoBehaviour
     public bool isExplored = false;
     public Waypoint exploredFrom;
     public bool isPlaceable  = true;
+    [SerializeField]private GameObject grassBlock, dirtBlock;
 
-    
 
     private Vector2Int gridPosition;
     private const int GridSize = 10;
@@ -28,6 +28,11 @@ public class Waypoint : MonoBehaviour
         );
     }
 
+    public void ChangeBlockToPath()
+    {
+        grassBlock.SetActive(false);
+        dirtBlock.SetActive(true);
+    }
     void OnMouseOver()
     {
         if (Input.GetMouseButtonDown(0) && isPlaceable)
