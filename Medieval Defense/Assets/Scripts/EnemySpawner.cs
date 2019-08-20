@@ -13,6 +13,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private EnemyDamage ork;
     [SerializeField] private EnemyDamage goblin;
     [SerializeField] private Text scoreText;
+    [SerializeField] private AudioClip spawnedEnemySFX;
     private int enemyCounter;
     private int score;
     private bool spawnEnemies = true;
@@ -27,6 +28,7 @@ public class EnemySpawner : MonoBehaviour
     {
         while (spawnEnemies)
         {
+            GetComponent<AudioSource>().PlayOneShot(spawnedEnemySFX);
             enemyCounter++;
              
             if (enemyCounter%6==0)
